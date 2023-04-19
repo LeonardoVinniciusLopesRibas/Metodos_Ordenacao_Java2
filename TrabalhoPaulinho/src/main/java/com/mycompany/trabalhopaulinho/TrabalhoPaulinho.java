@@ -68,7 +68,7 @@ public class TrabalhoPaulinho {
         }
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
-        System.out.println("\nO tempo de execução para o bubbleSort foi de: " + tempoExecucao + " segundo");
+        System.out.println("\nO tempo de execução para o bubbleSort foi de: " + tempoExecucao + " milésimos");
     }
 
     public static void selectionSort(int[] arr) {
@@ -87,7 +87,7 @@ public class TrabalhoPaulinho {
         }
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
-        System.out.println("\nO tempo de execução para o selectionSort foi de: " + tempoExecucao + " segundo");
+        System.out.println("\nO tempo de execução para o selectionSort foi de: " + tempoExecucao + " milésimos");
     }
 
     public static void insertionSort(int[] arr) {
@@ -104,6 +104,6 @@ public class TrabalhoPaulinho {
         }
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
-        System.out.println("\nO tempo de execução para o insertionSort foi de: " + tempoExecucao + " segundo");
+        System.out.println("\nO tempo de execução para o insertionSort foi de: " + tempoExecucao + " milésimos");
     }
 }
