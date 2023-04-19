@@ -55,7 +55,7 @@ public class TrabalhoPaulinho {
     }
 
     public static void bubbleSort(int[] arr) {
-        long inicio = System.currentTimeMillis();
+        long inicio = System.nanoTime();
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -66,13 +66,13 @@ public class TrabalhoPaulinho {
                 }
             }
         }
-        long fim = System.currentTimeMillis();
+        long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
         System.out.println("\nO tempo de execução para o bubbleSort foi de: " + tempoExecucao + " segundo");
     }
 
     public static void selectionSort(int[] arr) {
-        long inicio = System.currentTimeMillis();
+        long inicio = System.nanoTime();
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
@@ -85,13 +85,13 @@ public class TrabalhoPaulinho {
             arr[i] = arr[minIndex];
             arr[minIndex] = temp;
         }
-        long fim = System.currentTimeMillis();
+        long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
         System.out.println("\nO tempo de execução para o selectionSort foi de: " + tempoExecucao + " segundo");
     }
 
     public static void insertionSort(int[] arr) {
-        long inicio = System.currentTimeMillis();
+        long inicio = System.nanoTime();
         int n = arr.length;
         for (int i = 1; i < n; i++) {
             int key = arr[i];
@@ -102,7 +102,7 @@ public class TrabalhoPaulinho {
             }
             arr[j + 1] = key;
         }
-        long fim = System.currentTimeMillis();
+        long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
         System.out.println("\nO tempo de execução para o insertionSort foi de: " + tempoExecucao + " segundo");
     }
