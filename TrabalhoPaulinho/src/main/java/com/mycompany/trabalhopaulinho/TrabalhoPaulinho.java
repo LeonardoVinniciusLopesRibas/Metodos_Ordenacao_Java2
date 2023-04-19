@@ -74,16 +74,18 @@ public class TrabalhoPaulinho {
     public static void selectionSort(int[] arr) {
         long inicio = System.nanoTime();
         int n = arr.length;
-        for (int i = 0; i < n - 1; i++) {
-            int minIndex = i;
-            for (int j = i + 1; j < n; j++) {
-                if (arr[j] < arr[minIndex]) {
-                    minIndex = j;
+        for (int i = 0; i < arr.length - 1; i++) {
+            int posMenor = i;
+            for(int j = i+1; j < arr.length; j++){
+                if(arr[j] < arr[posMenor]){
+                    posMenor = j;
                 }
             }
-            int temp = arr[i];
-            arr[i] = arr[minIndex];
-            arr[minIndex] = temp;
+            if(posMenor != i){
+                int aux = arr[i];
+                arr[i] = arr[posMenor];
+                arr[posMenor] = aux;
+            }
         }
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
@@ -91,16 +93,14 @@ public class TrabalhoPaulinho {
     }
 
     public static void insertionSort(int[] arr) {
+        int chave, j;
         long inicio = System.nanoTime();
-        int n = arr.length;
-        for (int i = 1; i < n; i++) {
-            int key = arr[i];
-            int j = i - 1;
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j = j - 1;
+        for(int i = 1; i < arr.length; i++){
+            chave = arr[i];
+            for(j = i - 1;  j >= 0 && arr[j] > chave ; j-- ){
+                arr[j+1] = arr[j];
             }
-            arr[j + 1] = key;
+            arr[j+1] = chave;
         }
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
