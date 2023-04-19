@@ -52,6 +52,11 @@ public class TrabalhoPaulinho {
             default:
                 System.out.println("Opção inválida, rode o código novamente e selecione ou B, S ou I");
         }
+        
+        mostraTempoTodas(numbers);
+        
+        
+        
     }
 
     public static void bubbleSort(int[] arr) {
@@ -105,5 +110,53 @@ public class TrabalhoPaulinho {
         long fim = System.nanoTime();
         long tempoExecucao = fim - inicio;
         System.out.println("\nO tempo de execução para o insertionSort foi de: " + tempoExecucao + " milésimos");
+    }
+    public static void mostraTempoTodas(int[] array){
+        long inicio = System.nanoTime();
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        long fim = System.nanoTime();
+        long tempoExecucao1 = fim - inicio;
+        System.out.print("\nO tempo de execução para o bubbleSort foi de: " + tempoExecucao1 + " milésimos");
+        
+        inicio = System.nanoTime();
+        n = array.length;
+        for (int i = 0; i < array.length - 1; i++) {
+            int posMenor = i;
+            for(int j = i+1; j < array.length; j++){
+                if(array[j] < array[posMenor]){
+                    posMenor = j;
+                }
+            }
+            if(posMenor != i){
+                int aux = array[i];
+                array[i] = array[posMenor];
+                array[posMenor] = aux;
+            }
+        }
+        fim = System.nanoTime();
+        long tempoExecucao2 = fim - inicio;
+        System.out.print("\nO tempo de execução para o selectionSort foi de: " + tempoExecucao2 + " milésimos");
+        
+        int chave, j;
+        inicio = System.nanoTime();
+        for(int i = 1; i < array.length; i++){
+            chave = array[i];
+            for(j = i - 1;  j >= 0 && array[j] > chave ; j-- ){
+                array[j+1] = array[j];
+            }
+            array[j+1] = chave;
+        }
+        fim = System.nanoTime();
+        long tempoExecucao3 = fim - inicio;
+        System.out.print("\nO tempo de execução para o insertionSort foi de: " + tempoExecucao3 + " milésimos\n");
     }
 }
